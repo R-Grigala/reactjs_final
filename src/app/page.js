@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import useFetch from '@/hooks/useFetch';
+import useFetch from '@/lib/hooks';
 import styles from './page.module.css';
 
 const ProductsPage = () => {
