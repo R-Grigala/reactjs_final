@@ -1,0 +1,45 @@
+.navbar {
+    height: 6vh;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 100;
+}
+
+.navbardiv {
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    background-color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    gap: 1rem;
+}
+
+.navbardiv a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbardiv a:hover {
+    color: blue;
+}
+
+.activeTab {
+    border-bottom: 2px solid blue;
+    color: blue;
+}
+
+@media (max-width: 768px) {
+    .navbardiv {
+        width: 80vw;
+    }
+}

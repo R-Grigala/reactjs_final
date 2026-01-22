@@ -1,0 +1,119 @@
+.main {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    padding-top: 10vh;
+    padding-bottom: 2rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.summary {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.totalPrice {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.totalPrice span:first-child {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.checkoutBtn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkoutBtn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.loadingContainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin-top: 10vh;
+}
+
+.errorContainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    color: #dc2626;
+    margin-top: 10vh;
+}
+
+.emptyContainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin-top: 10vh;
+}
+
+@media (max-width: 768px) {
+    .summary {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .checkoutBtn {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+}

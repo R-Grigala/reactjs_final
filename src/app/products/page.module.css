@@ -1,0 +1,137 @@
+.container {
+    margin-top: 10vh;
+}
+
+.filterContainer {
+    padding: 0px 24px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filterBtn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: 1px solid #d1d5db;
+    background-color: white;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+.filterBtn:hover {
+    background-color: #f3f4f6;
+}
+
+.filterBtn.active {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.main {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 0px 24px;
+    padding-bottom: 200px;
+}
+
+.itemWrapper {
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.itemWrapper:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    border-color: #2563eb;
+}
+
+.itemWrapper img {
+    width: 100px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0;
+}
+
+.desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    font-size: 0.85rem;
+    color: #6b7280;
+    text-align: center;
+    margin: 0;
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.loadingText {
+    font-size: 1.125rem;
+    color: #6b7280;
+}
+
+.errorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.errorText {
+    font-size: 1.125rem;
+    color: #dc2626;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.emptyText {
+    color: #6b7280;
+    font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 0px 12px;
+        gap: 16px;
+    }
+
+    .itemWrapper {
+        width: 200px;
+        height: 300px;
+    }
+}

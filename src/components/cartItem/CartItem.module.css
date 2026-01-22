@@ -1,0 +1,143 @@
+.cartItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.cartItem:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cartHeadWrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.cartHeadWrapper a {
+    text-decoration: none;
+}
+
+.cartHeadWrapper img {
+    border-radius: 4px;
+}
+
+.cartImgTextWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.category {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.cartBodyWrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cartQuantityContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.minus,
+.plus {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.minus:hover:not(:disabled),
+.plus:hover:not(:disabled) {
+    background-color: #2563eb;
+    color: white;
+}
+
+.minus:disabled,
+.plus:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.quantity {
+    min-width: 30px;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+}
+
+.price {
+    min-width: 100px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.deleteBtn button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.deleteBtn button:hover {
+    opacity: 0.7;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .cartItem {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .cartBodyWrapper {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .price {
+        min-width: auto;
+    }
+}
