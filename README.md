@@ -1,6 +1,6 @@
 # 🛒 Shopify – Next.js E‑Commerce Project
 
-Live Demo: [https://vercel.com/roma-grigalashvilis-projects/shopify](https://vercel.com/roma-grigalashvilis-projects/shopify)
+Live Demo: [https://shopify-tawny-beta.vercel.app/](https://shopify-tawny-beta.vercel.app/)
 GitHub Repository: [https://github.com/R-Grigala/reactjs_final](https://github.com/R-Grigala/reactjs_final)
 
 ---
