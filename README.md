@@ -1,36 +1,175 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 Shopify – Next.js E‑Commerce Project
 
-## Getting Started
+Live Demo: [https://vercel.com/roma-grigalashvilis-projects/shopify](https://vercel.com/roma-grigalashvilis-projects/shopify)
+GitHub Repository: [https://github.com/R-Grigala/reactjs_final](https://github.com/R-Grigala/reactjs_final)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📌 Project Overview
+
+This project is a **full-featured e‑commerce web application** built with **Next.js (App Router)** as part of a midterm/final assignment. The application demonstrates modern React and Next.js concepts including **client & server components, routing, data fetching, authentication, Redux state management**, and form validation.
+
+The project uses the **Fake Store API** as a backend for products, users, carts, and authentication.
+
+---
+
+## 🚀 Tech Stack
+
+* **Next.js 13+ (App Router)**
+* **React**
+* **Redux Toolkit** (Cart management)
+* **React Hook Form** + **Yup** (Form validation)
+* **Tailwind CSS / CSS Modules**
+* **Fake Store API**
+* **Vercel** (Deployment)
+
+
+## 🧭 Navigation
+
+* **Products** – Product listing (default page)
+* **Product Details** – Dynamic route (`products/details/[id]`)
+* **Profile** – Server-side fetched user profile
+* **Cart** – Redux-powered cart functionality
+* **Login / Register** – Authentication system
+
+Navigation is handled using **Next.js App Router** and accessible via the **NavBar**.
+
+---
+
+## 🛍️ Products Page
+
+* Fetches products from:
+  `https://fakestoreapi.com/products`
+* Displays product list with image, title, and description
+* Category filtering
+* Navigation to product details page
+
+### Product Details Page
+
+* Dynamic route: `/products/details/[id]`
+* Fetches single product:
+  `https://fakestoreapi.com/products/1`
+* Displays:
+
+  * Image
+  * Title
+  * Description
+  * Price
+  * Category
+  * Rating & rating count
+
+---
+
+## 👤 Profile Page
+
+* Fetches user data from:
+  `https://fakestoreapi.com/users/3`
+* Uses **Server-Side Fetching**
+* Displays user profile information (design optional)
+
+---
+
+## 🛒 Cart Page
+
+* Fetches initial cart data from:
+  `https://fakestoreapi.com/carts/2`
+* Fully managed with **Redux Toolkit**
+* Features:
+
+  * Add product to cart
+  * Increase / decrease quantity (1–10)
+  * Remove product
+  * Total product count
+  * Total price calculation
+
+---
+
+## 🔐 Authentication
+
+### Login Page
+
+* Endpoint used:
+  `https://fakestoreapi.com/auth/login`
+* Example credentials:
+
+```json
+{
+  "username": "johnd",
+  "password": "m38rmF$"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Form handling with **react-hook-form**
+* Validation with **Yup**
+* "Remember Me" checkbox:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+  * Saves token to `localStorage`
+  * Automatically authorizes user on next visit
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Registration Page
 
-## Learn More
+* User registration functionality implemented
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ⚙️ State Management
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Redux Toolkit** is used for cart state
+* Global state includes:
 
-## Deploy on Vercel
+  * Cart items
+  * Product quantity
+  * Total items count
+  * Total payable amount
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 Deployment
+
+* Project deployed on **Vercel**
+* Live URL provided in submission
+* Optimized for production build
+
+---
+
+## 📦 Installation & Setup
+
+```bash
+# Clone repository
+git clone https://github.com/R-Grigala/reactjs_final.git
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+```
+
+Open `http://localhost:3000` in your browser.
+
+---
+
+## 📝 Assignment Requirements Checklist
+
+✅ Next.js project with `src` directory
+✅ App Router navigation
+✅ useState & useEffect hooks
+✅ Fetch API usage
+✅ Products & Product Details pages
+✅ Server-side fetching (Profile)
+✅ Redux Cart functionality
+✅ Authentication (Login & Register)
+✅ Form validation (Yup + React Hook Form)
+✅ GitHub repository with multiple commits
+✅ Deployed on Vercel
+
+---
+
+## 👨‍💻 Author
+
+**Roma Grigalashvili**
+GitHub: [https://github.com/R-Grigala](https://github.com/R-Grigala)
+
+---
+
+⭐ If you like this project, feel free to star the repository!
