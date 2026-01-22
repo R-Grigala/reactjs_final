@@ -10,8 +10,8 @@ const NavBar = () => {
         <nav className={styles.navbar}>
             <div className={styles.navbardiv}>
                 <Link 
-                    href="/products" 
-                    className={pathname === '/products' ? styles.activeTab : ''}
+                    href="/" 
+                    className={pathname === '/' ? styles.activeTab : ''}
                 >
                     Products
                 </Link>
