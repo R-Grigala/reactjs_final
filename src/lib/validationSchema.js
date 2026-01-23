@@ -41,3 +41,15 @@ export const registrationSchema = yup.object().shape({
     .min(10, 'ტელეფონი უნდა იყოს მინიმუმ 10 სიმბოლო')
     .max(100, 'ტელეფონი უნდა იყოს მაქსიმუმ 100 სიმბოლო'),
 });
+
+export const loginSchema = yup.object().shape({
+  username: yup
+    .string()
+    .required('სახელი აუცილებელია')
+    .min(3, 'სახელი უნდა იყოს მინიმუმ 3 სიმბოლო'),
+  password: yup
+    .string()
+    .required('პაროლი აუცილებელია')
+    .min(4, 'პაროლი უნდა იყოს მინიმუმ 4 სიმბოლო'),
+  rememberMe: yup.boolean(),
+});

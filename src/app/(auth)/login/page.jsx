@@ -5,22 +5,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
 import { useAppDispatch } from "@/lib/hooks";
 import { updateUser } from "@/lib/slices/userSlice";
-
-// Yup validation schema: ვალიდაცია login ფორმისთვის
-const loginSchema = yup.object().shape({
-  username: yup
-    .string()
-    .required("სახელი აუცილებელია")
-    .min(3, "სახელი უნდა იყოს მინიმუმ 3 სიმბოლო"),
-  password: yup
-    .string()
-    .required("პაროლი აუცილებელია")
-    .min(4, "პაროლი უნდა იყოს მინიმუმ 4 სიმბოლო"),
-  rememberMe: yup.boolean(),
-});
+import { loginSchema } from "@/lib/validationSchema";
 
 function LoginPage() {
   const router = useRouter();

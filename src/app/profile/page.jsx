@@ -1,9 +1,37 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 
-const page = async () => {
-  const resp = await fetch("https://fakestoreapi.com/users/3", { cache: "no-store" });
-  const user = await resp.json();
+const page = () => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const resp = await fetch("https://fakestoreapi.com/users/3", {
+          cache: "no-store",
+        });
+        const data = await resp.json();
+        setUser(data);
+      } catch (error) {
+        console.error("Failed to load profile:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  if (loading) {
+    return <div className={styles.profileContainer}>Loading...</div>;
+  }
+
+  if (!user) {
+    return <div className={styles.profileContainer}>Failed to load profile.</div>;
+  }
 
   return (
     <div className={styles.profileContainer}>
