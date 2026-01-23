@@ -6,8 +6,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { registrationSchema } from '@/lib/validationSchema';
 import styles from './page.module.css';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function RegistrationForm() {
+  const router = useRouter();
   const [submitStatus, setSubmitStatus] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -52,6 +54,9 @@ export default function RegistrationForm() {
         data: responseData,
       });
       reset();
+      setTimeout(() => {
+        router.push('/login');
+      }, 1500);
     } catch (error) {
       setSubmitStatus({ 
         type: 'error', 

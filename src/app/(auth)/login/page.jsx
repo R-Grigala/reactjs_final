@@ -9,7 +9,7 @@ import * as yup from "yup";
 import { useAppDispatch } from "@/lib/hooks";
 import { updateUser } from "@/lib/slices/userSlice";
 
-// Yup validation schema
+// Yup validation schema: ვალიდაცია login ფორმისთვის
 const loginSchema = yup.object().shape({
   username: yup
     .string()
@@ -29,6 +29,7 @@ function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
 
+  // React Hook Form-ის კონფიგურაცია და საწყისი მნიშვნელობები
   const {
     register,
     handleSubmit,
@@ -43,7 +44,7 @@ function LoginPage() {
     },
   });
 
-  // Check for saved credentials on mount
+  // Mount-ზე: ვამოწმებთ შენახულ მომხმარებელს/ტოკენს
   useEffect(() => {
     setMounted(true);
     const savedUsername = localStorage.getItem("savedUsername");
@@ -60,11 +61,12 @@ function LoginPage() {
     }
   }, [router, setValue]);
 
+  // Submit: ავტორიზაცია, მომხმარებლის მონაცემები და რედირექტი
   const onSubmit = async (data) => {
     setLoading(true);
 
     try {
-      // Step 1: Login to get token
+      // Step 1: ვიღებთ ტოკენს
       const response = await fetch("https://fakestoreapi.com/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -80,29 +82,29 @@ function LoginPage() {
 
       const result = await response.json();
 
-      // Step 2: Fetch user data
+      // Step 2: ვიღებთ მომხმარებლის მონაცემებს
       const userdata = await fetch("https://fakestoreapi.com/users/1");
       const parsedUserdata = await userdata.json();
 
-      // Step 3: Save token and user data
+      // Step 3: ვინახავთ ტოკენს და საჭირო მონაცემებს
       if (result?.token) {
         localStorage.setItem("authToken", result.token);
         localStorage.setItem("username", data.username);
 
-        // Save credentials if "Remember me" is checked
+        // "Remember me" -ის მიხედვით ვინახავთ იუზერს
         if (data.rememberMe) {
           localStorage.setItem("savedUsername", data.username);
         } else {
           localStorage.removeItem("savedUsername");
         }
 
-        // Step 4: Save user to Redux store
+        // Step 4: ვინახავთ მომხმარებელს Redux store-ში
         dispatch(updateUser(parsedUserdata));
 
         // Dispatch auth change event for navbar
         window.dispatchEvent(new Event("authChange"));
 
-        // Step 5: Redirect
+        // Step 5: რედირექტი მთავარ გვერდზე
         router.push("/");
       }
     } catch (error) {
