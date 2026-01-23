@@ -87,12 +87,16 @@
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .logoutBtn:hover {
     background-color: #b91c1c;
     transform: translateY(-2px);
 }
+
+
 
 @media (max-width: 768px) {
     .navbardiv {

@@ -1,12 +1,11 @@
 'use client';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
 
 const NavBar = () => {
     const pathname = usePathname();
-    const router = useRouter();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState('');
     const [mounted, setMounted] = useState(false);
@@ -28,22 +27,6 @@ const NavBar = () => {
                 setUsername('');
             }
         }
-    };
-
-    const handleLogout = () => {
-        if (typeof window !== 'undefined') {
-            // Clear all auth-related data from localStorage
-            localStorage.removeItem('authToken');
-            localStorage.removeItem('username');
-            localStorage.removeItem('rememberMe');
-            localStorage.removeItem('cart');
-            
-            // Dispatch custom event to update navbar
-            window.dispatchEvent(new Event('authChange'));
-        }
-        setIsLoggedIn(false);
-        setUsername('');
-        router.push('/login');
     };
 
     // Listen for auth changes (login/logout)
@@ -98,12 +81,9 @@ const NavBar = () => {
                     {isLoggedIn ? (
                         <>
                             <span className={styles.username}>Hello, {username}!</span>
-                            <button 
-                                onClick={handleLogout}
-                                className={styles.logoutBtn}
-                            >
+                            <Link href="/logout" className={styles.logoutBtn}>
                                 Logout
-                            </button>
+                            </Link>
                         </>
                     ) : (
                         <Link href="/login" className={styles.loginBtn}>
