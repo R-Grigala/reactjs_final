@@ -26,7 +26,7 @@ function LoginPage() {
     resolver: yupResolver(loginSchema),
     defaultValues: {
       username: "",
-      password: "m38rmF$",
+      password: "",
       rememberMe: false,
     },
   });
